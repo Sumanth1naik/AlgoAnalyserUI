@@ -1,0 +1,20 @@
+<div class="login-wrapper">
+  <form (ngSubmit)="loginUser()" class="login-form">
+    <h2>Login to Algo Analyzer</h2>
+
+    <input type="text" placeholder="Username" [(ngModel)]="username" name="username" required />
+
+    <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required />
+
+    <button type="submit" class="submit-button">Login</button>
+
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <p class="signup-redirect">
+      New user? <a routerLink="/signup">Create an account</a>
+    </p>
+  </form>
+</div>
