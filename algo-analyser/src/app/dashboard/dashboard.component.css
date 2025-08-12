@@ -1,0 +1,90 @@
+.dashboard-container {
+  padding: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.dashboard-actions {
+  margin-bottom: 20px;
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.action-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.upload-button,
+.logout-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.upload-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.logout-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.upload-button:hover {
+  background-color: #45a049;
+}
+
+.logout-button:hover {
+  background-color: #d7372c;
+}
+
+.loading-text,
+.no-strategies {
+  font-style: italic;
+  color: #666;
+  margin-top: 20px;
+}
+
+.strategy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.strategy-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  outline: none;
+}
+
+.strategy-card:hover,
+.strategy-card:focus {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+  background-color: #f9fafb;
+}
+
+.card-header {
+  font-size: 1.2em;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.card-body p {
+  margin: 4px 0;
+  color: #555;
+}

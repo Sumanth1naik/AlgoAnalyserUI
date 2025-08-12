@@ -1,0 +1,38 @@
+/* RESET ALL DEFAULT MARGINS/PADDINGS GLOBALLY */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* BODY/HTML FULL HEIGHT WITH NO SCROLL GAPS */
+html, body {
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #f4f6f8;
+}
+
+/* REMOVE EXTRA SCROLLING MARGINS */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Make sure main layout takes full height */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Prevent router-outlet content from overflowing */
+.main-content {
+  flex: 1;
+  width: 100%;
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+}

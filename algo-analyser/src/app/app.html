@@ -1,0 +1,23 @@
+<!-- app.html -->
+<header class="app-header">
+  <div class="header-left">
+    <img src="/assets/logo.png" alt="Logo" class="logo" />
+    <span class="app-name">Algo Analyzer</span>
+  </div>
+
+  <div class="header-right" (click)="toggleDropdown()">
+    <img src="/assets/user-icon.png" alt="User" class="user-icon" />
+    <div class="dropdown" *ngIf="dropdownOpen">
+      <p class="username">{{ username }}</p>
+      <button class="logout-btn" (click)="logout()">Logout</button>
+    </div>
+  </div>
+</header>
+
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  <p>© 2025 Algo Analyzer. Built with ❤️ by Sumanth Naik</p>
+</footer>

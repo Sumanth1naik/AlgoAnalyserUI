@@ -1,0 +1,111 @@
+/* Reset default browser margins/padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8; /* Light gray background */
+}
+
+/* Wrapper to structure layout */
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header */
+.app-header {
+  background-color: #1e1e2f;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.5rem;
+  height: 64px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 48px;
+  margin-right: 0.75rem;
+}
+
+.app-name {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header-right {
+  position: relative;
+  cursor: pointer;
+}
+
+.user-icon {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Dropdown */
+.dropdown {
+  position: absolute;
+  top: 56px;
+  right: 0;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 0.75rem;
+  z-index: 1000;
+}
+
+.username {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
+
+/* Main content */
+.main-content {
+  flex: 1;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+/* Footer */
+.app-footer {
+  background-color: #1e1e2f;
+  color: #ccc;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.1);
+}
