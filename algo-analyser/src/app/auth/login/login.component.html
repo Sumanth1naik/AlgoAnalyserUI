@@ -1,0 +1,52 @@
+<div class="auth-page">
+
+  <!-- Login card -->
+  <form (ngSubmit)="loginUser()" class="login-form" novalidate>
+    <h2 class="title">Welcome back</h2>
+    <p class="subtitle">Sign in to continue</p>
+
+    <label class="input-group">
+      <span class="icon" aria-hidden="true">👤</span>
+      <input
+        type="text"
+        placeholder="Username"
+        [(ngModel)]="username"
+        name="username"
+        required
+        autocomplete="username"
+      />
+    </label>
+
+    <label class="input-group">
+      <span class="icon" aria-hidden="true">🔒</span>
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+        name="password"
+        required
+        autocomplete="current-password"
+      />
+    </label>
+
+    <div class="form-row">
+      <label class="remember">
+        <input type="checkbox" name="remember" />
+        <span>Remember me</span>
+      </label>
+      <a routerLink="/forgot-password" class="link">Forgot password?</a>
+    </div>
+
+    <button type="submit" class="submit-button">
+      Login
+    </button>
+
+    <div *ngIf="errorMessage" class="error-message">
+      {{ errorMessage }}
+    </div>
+
+    <p class="signup-redirect">
+      New user? <a routerLink="/signup">Create an account</a>
+    </p>
+  </form>
+</div>

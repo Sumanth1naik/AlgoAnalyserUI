@@ -1,0 +1,21 @@
+<div class="upload-container">
+  <h2>📈 Upload Strategy CSV</h2>
+
+  <input
+    type="text"
+    placeholder="Enter Strategy Name"
+    [(ngModel)]="strategyName"
+    name="strategyName"
+    required
+  />
+
+  <input type="file" (change)="onFileSelected($event)" />
+
+  <button (click)="onUpload()" [disabled]="!selectedFile || !strategyName">
+    Upload
+  </button>
+
+  <div *ngIf="uploadStatus" class="status-message">
+    {{ uploadStatus }}
+  </div>
+</div>

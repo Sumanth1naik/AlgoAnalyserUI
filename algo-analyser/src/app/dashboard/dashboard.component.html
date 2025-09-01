@@ -1,0 +1,46 @@
+<div class="dashboard-container">
+  <h2>📈 Welcome to Algo Analyzer</h2>
+
+  <div class="dashboard-actions">
+    <p>👋 Welcome, <strong>{{ username }}</strong></p>
+    <p>You're successfully logged in 🎉</p>
+
+    <div class="action-buttons">
+      <button (click)="goToUpload()" class="upload-button">
+        📤 Upload New Strategy
+      </button>
+
+      <button class="logout-button" (click)="logout()">
+        🔒 Logout
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="loading" class="loading-text">
+    ⏳ Loading strategies...
+  </div>
+
+  <div *ngIf="!loading && strategies.length === 0" class="no-strategies">
+    🚫 No strategies found. Please upload one.
+  </div>
+
+  <div *ngIf="!loading && strategies.length > 0">
+    <h3>📊 Your Strategies ({{ strategies.length }})</h3>
+    <div class="strategy-cards">
+      <div
+        *ngFor="let strategy of strategies"
+        class="strategy-card"
+        (click)="viewStrategy(strategy.id)"
+        tabindex="0"
+      >
+        <div class="card-header">
+          🧠 <strong>{{ strategy.name }}</strong>
+        </div>
+        <div class="card-body">
+          <p><strong>ID:</strong> {{ strategy.id }}</p>
+          <p><strong>Uploaded:</strong> {{ strategy.uploaded_at | date: 'short' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

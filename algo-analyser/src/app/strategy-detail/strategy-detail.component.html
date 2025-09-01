@@ -1,0 +1,41 @@
+<div class="strategy-detail-container">
+  <h2>📊 Strategy ID: {{ strategyId }}</h2>
+
+  <button (click)="goBack()" class="btn-back">⬅ Back to Dashboard</button>
+
+  <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+  <div *ngIf="loading" class="loading-spinner">Loading trades...</div>
+
+  <table *ngIf="!loading && trades && trades.length > 0" class="trades-table">
+    <thead>
+      <tr>
+        <th (click)="sortBy('id')">Trade ID</th>
+        <th (click)="sortBy('date')">Date</th>
+        <th (click)="sortBy('entry_price')">Entry Price</th>
+        <th (click)="sortBy('exit_price')">Exit Price</th>
+        <th (click)="sortBy('pnl')">PnL</th>
+        <th (click)="sortBy('cumulative_equity')">Cumulative Equity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr 
+        *ngFor="let trade of trades"
+        [ngClass]="{ 'profit': trade.pnl > 0, 'loss': trade.pnl < 0 }"
+        (mouseover)="hoveredTrade = trade.id"
+        (mouseleave)="hoveredTrade = null"
+      >
+        <td>{{ trade.id }}</td>
+        <td>{{ trade.date | date: 'short' }}</td>
+        <td>{{ trade.entry_price }}</td>
+        <td>{{ trade.exit_price }}</td>
+        <td>{{ trade.pnl | number:'1.2-2' }}</td>
+        <td>{{ trade.cumulative_equity | number:'1.2-2' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="!loading && trades && trades.length === 0 && !errorMessage">
+    No trades found for this strategy.
+  </p>
+</div>
